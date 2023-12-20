@@ -1,13 +1,17 @@
 // Get references to elements
 var input = $('input');
-// var textBox = $('textarea');
+var textBox = $('textarea');
+var searchBtn = $('button');
 
 // Store user input
 var searchString = input.val();
 searchString.trim();
 
+//Test string
+var testString = 'happy';
+
 // API URL with user input/ searchString
-const url = 'https://wordsapiv1.p.rapidapi.com/words/' + searchString + '/definitions';
+const url = 'https://wordsapiv1.p.rapidapi.com/words/' + testString + '/definitions';
 
 // Options object
 const options = {
