@@ -9,6 +9,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="styles.css" />
     <title>WordSmith</title>
   </head>
 
@@ -48,23 +49,39 @@
     </nav>
     <!-- Navigation bar ends -->
     <!-- Hero section/jumbotron -->
-    <hero>
-      <img />
-      <p></p>
-    </hero>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4 d-flex justify-content-center">WordSmith</h1>
+        <p class="lead d-flex justify-content-center">
+          Find the word, learn to use it!
+        </p>
+      </div>
+    </div>
     <!-- Hero section/jumbotron ends -->
     <!-- heading -->
-    <div class="containerHeader container-fluid d-flex justify-content-center">
-      <h1>WordSmith</h1>
-      <h2>Find the word, learn to use it!</h2>
-    </div>
+
+    <!-- <div class="containerHeader container-fluid d-flex justify-content-center"> -->
+    <!-- <h1>WordSmith</h1> -->
+    <!-- <h2>Find the word, learn to use it!</h2> -->
+    <!-- </div> -->
     <!-- heading ends -->
     <!-- searching and displaying section -->
     <div class="searching">
       <div class="containerSearch">
         <form>
+          @
           <input type="text" name="placeholder" />
         </form>
+        <div
+          class="buttonConatiner container-fluid d-flex justify-content-center"
+        >
+          <button type="button" class="btn btn-primary btn-lg btn-block">
+            Block level button
+          </button>
+          <button type="button" class="btn btn-secondary btn-lg btn-block">
+            Block level button
+          </button>
+        </div>
         <button>Search</button>
         <button>See it in context</button>
         <textarea>
