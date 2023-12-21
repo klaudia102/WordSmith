@@ -1,5 +1,5 @@
 // Get references to elements
-var input = document.querySelector('input');
+var input = document.querySelector('#word-input');
 var wordMeaningBox = document.querySelector('.textArea');
 var searchBtn = document.querySelector('#searchButton');
 
