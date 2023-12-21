@@ -1,12 +1,11 @@
 // Get references to elements
-var input = document.querySelector('input');
-var wordMeaningBox = document.querySelector('textarea');
-var parentContainer = document.querySelector('.containerSearch');
-var searchBtn = parentContainer.children[2];
+var input = document.querySelector("#word-input");
+var wordMeaningBox = document.querySelector(".textArea");
+var searchBtn = document.querySelector("#searchButton");
 
 // Listen for click events on searchBtn
 // Make API when searchBtn is clicked
-searchBtn.addEventListener('click', getDefinition)
+searchBtn.addEventListener("click", getDefinition);
 
 
 // Function to fetch data
@@ -22,7 +21,10 @@ fetch(queryURL)
 		return response.json();
 	}).then(function (data) { 
     
-        // Display word definition in textarea
+	// Display word definition in console to test
+	console.log(data[0].meanings[0].definitions[0].definition);
+		
+	   // Display word definition in textarea  	
         wordMeaningBox.value = data[0].meanings[0].definitions[0].definition;
         
     })
