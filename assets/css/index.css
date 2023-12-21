@@ -1,0 +1,39 @@
+body {
+  background-color: #e3f6f5;
+}
+
+.inputBox {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px 60px;
+  color: #333;
+  margin: 6px 0px 10px;
+  text-align: center;
+}
+
+.searchInputResult {
+  display: flex;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+#contextButton {
+  background: white;
+  border: 0.5px solid #2b3035;
+  color: #2b3035;
+}
+#searchButton {
+  background: white;
+  border: 0.5px solid #2b3035;
+  color: #2b3035;
+}
+
+.navbar {
+  max-width: 100%;
+}
+
+.textArea {
+  background-color: white;
+  padding-bottom: 600px;
+}

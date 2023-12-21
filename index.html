@@ -9,16 +9,19 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
 
     <title>WordSmith</title>
   </head>
 
   <body>
     <!-- Navigation bar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav
+      class="navbar navbar-expand-lg bg-body-tertiary stickt-top"
+      data-bs-theme="dark"
+    >
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#"></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -49,58 +52,84 @@
       </div>
     </nav>
     <!-- Navigation bar ends -->
+
     <!-- Hero section/jumbotron -->
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid pt-4">
       <div class="container">
-        <h1 class="display-4 d-flex justify-content-center">WordSmith</h1>
+        <h1 class="display-4 d-flex justify-content-center fw-medium">
+          WordSmith
+        </h1>
         <p class="lead d-flex justify-content-center">
           Find the word, learn to use it!
         </p>
       </div>
     </div>
     <!-- Hero section/jumbotron ends -->
-    <!-- heading -->
 
-    <!-- <div class="containerHeader container-fluid d-flex justify-content-center"> -->
-    <!-- <h1>WordSmith</h1> -->
-    <!-- <h2>Find the word, learn to use it!</h2> -->
-    <!-- </div> -->
-    <!-- heading ends -->
-    <!-- searching and displaying section -->
-    <div class="searching">
-      <div class="containerSearch">
-        <form>
-          @
-          <input type="text" placeholder="search" />
-        </form>
-        <div
-          class="buttonConatiner container-fluid d-flex justify-content-center"
-        >
-          <div class="d-grid gap-2 col-6@ mx-auto">
-            <button class="btn btn-light" type="button">
+    <!-- Search form -->
+
+    <div class="containerSearch d-flex justify-content-center">
+      <form class="formContainer">
+        <input
+          class="inputBox shadow-sm"
+          type="search"
+          placeholder="search"
+          autocomplete="off"
+          autocomplete="off"
+          id="word-input"
+        />
+        <div class="buttonConatiner d-flex justify-content-center">
+          <div class="d-grid gap-2 col-6@ my-4">
+            <button
+              class="btn btn-light mb-2 px-3 shadow-sm"
+              type="button"
+              id="searchButton"
+            >
               Search for your word
             </button>
-            <button class="btn btn-dark" type="button">
+            <button
+              class="btn btn-dark mt-2 px-3 shadow-sm"
+              type="button"
+              id="contextButton"
+            >
               Find Word in Context
             </button>
           </div>
         </div>
-        <button>Search</button>
-        <button>See it in context</button>
-        <textarea>
-            <!-- definition -->
-        </textarea>
+      </form>
+    </div>
+
+    <!-- Result from Search Input -->
+    <div class="container-fluid">
+      <div
+        class="textArea container-fluid d-flex justify-content-center py-4"
+        id="textArea"
+      >
+        Lorem ipsum dolor sit amet. Ut iure laudantium qui optio consequatur ea
+        porro quos et suscipit voluptate eum itaque suscipit id sapiente saepe
+        est natus nihil? Quo dolores nihil nam doloribus dolorum est totam
+        labore et temporibus ullam. Et numquam nemo aut asperiores iure a
+        doloribus natus est animi sint. Et impedit nobis sit voluptatibus
+        mollitia et nostrum nostrum! Et voluptates enim et vitae nihil qui eaque
+        dolorum eos incidunt soluta in omnis provident. Ea alias officiis quo
+        aliquam odio sed modi minus sit molestiae voluptatem sed repellendus
+        totam est minus magnam sed blanditiis saepe! Eum nihil expedita vel
+        perspiciatis magni et voluptas commodi. Et magnam sint nam obcaecati
       </div>
     </div>
+
     <!-- searching and displaying area ends -->
+
     <!--  footer-->
     <footer>
       <!-- not sure what we want to put? -->
     </footer>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
+      <script src="assets/js/script.js"></script>
+    
   </body>
 </html>
