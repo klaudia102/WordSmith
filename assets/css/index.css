@@ -19,7 +19,14 @@ body {
 }
 
 #contextButton {
-  background: #2b4353;
+  background: white;
+  border: 0.5px solid #2b3035;
+  color: #2b3035;
+}
+#searchButton {
+  background: white;
+  border: 0.5px solid #2b3035;
+  color: #2b3035;
 }
 
 .navbar {
