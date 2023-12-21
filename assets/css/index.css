@@ -23,12 +23,16 @@ body {
   border: 0.5px solid #2b3035;
   color: #2b3035;
 }
+#searchButton {
+  background: white;
+  border: 0.5px solid #2b3035;
+  color: #2b3035;
+}
 
 .navbar {
   max-width: 100%;
 }
 
-#searchButton:hover {
-}
-#contextButton:hover {
+.textArea {
+  background-color: white;
 }
