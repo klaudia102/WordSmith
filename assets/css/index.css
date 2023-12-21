@@ -6,9 +6,10 @@ body {
   border: 1px solid #ddd;
   border-radius: 10px;
   width: 100%;
-  padding: 6px 14px;
+  padding: 10px 60px;
   color: #333;
   margin: 6px 0px 10px;
+  text-align: center;
 }
 
 .searchInputResult {
@@ -19,4 +20,7 @@ body {
 
 #contextButton {
   background: #2b4353;
+}
+
+.navbar {
 }
