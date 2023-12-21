@@ -1,8 +1,7 @@
 // Get references to elements
 var input = document.querySelector('input');
-var wordMeaningBox = document.querySelector('textarea');
-var parentContainer = document.querySelector('.containerSearch');
-var searchBtn = parentContainer.children[2];
+var wordMeaningBox = document.querySelector('.textArea');
+var searchBtn = document.querySelector('#searchButton');
 
 // Listen for click events on searchBtn
 // Make API when searchBtn is clicked
