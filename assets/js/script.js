@@ -5,7 +5,7 @@ var searchBtn = document.querySelector("#searchButton");
 
 // Listen for click events on searchBtn
 // Make API when searchBtn is clicked
-searchBtn.addEventListener("click ", getDefinition);
+searchBtn.addEventListener("click", getDefinition);
 
 
 // Function to fetch data
