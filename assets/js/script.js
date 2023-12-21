@@ -26,7 +26,7 @@ fetch(queryURL)
 		
 	// Display word definition in div
 	wordMeaningBox.textContent = "";	
-        wordMeaningBox.textContent += data[0].meanings[0].definitions[0].definition;
+        wordMeaningBox.textContent = data[0].meanings[0].definitions[0].definition;
         
     })
     
