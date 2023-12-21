@@ -24,8 +24,9 @@ fetch(queryURL)
 	// Display word definition in console to test
 	console.log(data[0].meanings[0].definitions[0].definition);
 		
-	// Display word definition in textarea  	
-        wordMeaningBox.textContent = data[0].meanings[0].definitions[0].definition;
+	// Display word definition in div
+	wordMeaningBox.textContent = "";	
+        wordMeaningBox.textContent += data[0].meanings[0].definitions[0].definition;
         
     })
     
