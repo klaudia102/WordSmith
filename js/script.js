@@ -1,27 +1,33 @@
 // Get references to elements
+var input = $('input');
 var textBox = $('textarea');
-var searchBtn = $('.containerSearch').children().eq(1)
-searchBtn.on('click',getDefinition)
+var searchBtn = $('button');
 
-//  Function to fetch data
-function getDefinition() {
+// Store user input
+var searchString = input.val();
+searchString.trim();
 
-//Get user input
-	var searchString = $('input').val();
-	
-// Remove whitespace from string
-searchString.trim()
+//Test string
+var testString = 'happy';
 
-// Add string to queryURL
-var queryURL = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchString;
+// API URL with user input/ searchString
+const url = 'https://wordsapiv1.p.rapidapi.com/words/' + testString + '/definitions';
 
-// Fetch data from API
-	fetch(queryURL)
-	.then(function (response) {
-		return response.json();
-	}).then(function (data) {
-	// Display data in textarea
-		textBox.text(data[0].meanings[0].definitions[0].definition)
-	 })
+// Options object
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '9e97ea1cf8msh73f0f19136d7aedp1f32d8jsn221463fc8414',
+		'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
+	}
+};
+
+// Fetch data
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
 }
-
