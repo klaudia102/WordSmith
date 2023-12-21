@@ -1,9 +1,22 @@
+body {
+  background-color: #e3f6f5;
+}
+
 .inputBox {
-  border: 2px solid;
-  border-radius: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 100%;
+  padding: 6px 14px;
+  color: #333;
+  margin: 6px 0px 10px;
 }
 
 .searchInputResult {
   display: flex;
   justify-content: center;
+  border-radius: 12px;
+}
+
+#contextButton {
+  background: #2b4353;
 }
