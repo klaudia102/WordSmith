@@ -20,3 +20,7 @@ body {
 #contextButton {
   background: #2b4353;
 }
+
+.navbar {
+  background-color: #2b4353 !important;
+}
