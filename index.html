@@ -17,7 +17,10 @@
   <body>
     <div class="container-fluid">
       <!-- Navigation bar -->
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav
+        class="navbar navbar-expand-lg bg-body-tertiary stickt-top"
+        data-bs-theme="dark"
+      >
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Navbar</a>
           <button
@@ -52,9 +55,11 @@
       <!-- Navigation bar ends -->
 
       <!-- Hero section/jumbotron -->
-      <div class="jumbotron jumbotron-fluid">
+      <div class="jumbotron jumbotron-fluid pt-4">
         <div class="container">
-          <h1 class="display-4 d-flex justify-content-center">WordSmith</h1>
+          <h1 class="display-4 d-flex justify-content-center fw-medium">
+            WordSmith
+          </h1>
           <p class="lead d-flex justify-content-center">
             Find the word, learn to use it!
           </p>
@@ -64,26 +69,33 @@
 
       <!-- Search form -->
 
-      <div
-        class="containerSearch conatiner-fluid d-flex justify-content-center"
-      >
-        <form>
+      <div class="containerSearch d-flex justify-content-center">
+        <form class="formContainer">
           <input
-            class="inputBox py-2 mb-4"
+            class="inputBox"
+            d-sm
+            py-2
+            mb-4
             type="search"
             placeholder="search"
             autocomplete="off"
             autocomplete="off"
             id="word-input"
           />
-          <div
-            class="buttonConatiner container-fluid d-flex justify-content-center"
-          >
-            <div class="d-grid gap-2 col-6@ mx-auto">
-              <button class="btn btn-light" type="button">
+          <div class="buttonConatiner d-flex justify-content-center">
+            <div class="d-grid gap-2 col-6@ my-4">
+              <button
+                class="btn btn-light mb-2 px-3"
+                type="button"
+                id="searchButton"
+              >
                 Search for your word
               </button>
-              <button class="btn btn-dark" type="button">
+              <button
+                class="btn btn-dark mt-2 px-3"
+                type="button"
+                id="contextButton"
+              >
                 Find Word in Context
               </button>
             </div>
@@ -92,12 +104,9 @@
       </div>
 
       <!-- Result from Search Input -->
-      <textarea
-        class="searchInputResult conatiner-fluid d-flex justify-content-center"
-      >
-            <!-- definition -->
-        </textarea
-      >
+      <div
+        class="textArea conatiner-fluid d-flex justify-content-center py-4"
+      ></div>
 
       <!-- searching and displaying area ends -->
 
