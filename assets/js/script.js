@@ -10,7 +10,7 @@ searchBtn.addEventListener('click', getDefinition);
 
 // Function to fetch data
 function getDefinition() {
-    // Get user input
+// Get user input
 var word = input.value;
 // Remove whitespace from input string
 word.trim();
@@ -24,8 +24,8 @@ fetch(queryURL)
 	// Display word definition in console to test
 	console.log(data[0].meanings[0].definitions[0].definition);
 		
-	   // Display word definition in textarea  	
-        wordMeaningBox.value = data[0].meanings[0].definitions[0].definition;
+	// Display word definition in textarea  	
+        wordMeaningBox.textContent = data[0].meanings[0].definitions[0].definition;
         
     })
     
