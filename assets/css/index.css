@@ -1,0 +1,9 @@
+.inputBox {
+  border: 2px solid;
+  border-radius: 12px;
+}
+
+.searchInputResult {
+  display: flex;
+  justify-content: center;
+}
