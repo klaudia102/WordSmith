@@ -1,5 +1,5 @@
 body {
-  background-color: #e3f6f5;
+  background-color: #f5ebeb;
 }
 
 .inputBox {
@@ -22,11 +22,21 @@ body {
   background: white;
   border: 0.5px solid #2b3035;
   color: #2b3035;
+  border: 1px solid #ddd;
 }
 #searchButton {
   background: white;
   border: 0.5px solid #2b3035;
   color: #2b3035;
+  border: 1px solid #ddd;
+}
+
+#contextButton:hover {
+  background-color: #c8d9eb;
+}
+
+#searchButton:hover {
+  background-color: #c8d9eb;
 }
 
 .navbar {
