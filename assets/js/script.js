@@ -1,30 +1,84 @@
 // Get references to elements
 var input = document.querySelector('#word-input');
-var wordMeaningBox = document.querySelector('#textArea');
+var dataDisplayArea = document.querySelector('#textArea');
 var searchBtn = document.querySelector('#searchButton');
+var contextBtn = document.querySelector('#contextButton');
 
 // Listen for click events on searchBtn
-// Make API when searchBtn is clicked
+// Make API call to Free Dictionary API when searchBtn is clicked
 searchBtn.addEventListener('click', getDefinition);
 
+// Listen for click events on contextBtn
+// Make API call to Google News API when contextBtn is clicked
+contextBtn.addEventListener('click',getWordInContext);
 
-// Function to fetch data
+// API URLs
+var dictionaryApiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/"
+
+var newsApiUrl = "https://gnews.io/api/v4/search?";
+// API key for news Api
+var key = "&country=us&max=10&token=d06b56befd778f95afde57c26ebc9890";
+
+// Query Urls
+var wordQueryURL;
+var newsQueryURL;
+
+//Search string
+
+var searchString = "";
+
+// Function to fetch data from dictionary API
 function getDefinition() {
+	
 // Get user input
-var word = input.value;
-// Remove whitespace from input string
-word.trim();
-var queryURL = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word;
-
-fetch(queryURL)
+searchString = input.value;
+	
+// Remove whitespace from search string
+searchString.trim();
+	
+wordQueryURL = dictionaryApiUrl + searchString;
+	
+// Request dictionary data
+fetch(wordQueryURL)
 	.then(function (response) {
-		return response.json();
+	return response.json();
 	}).then(function (data) { 
     		
-	// Display word definition in div
-	wordMeaningBox.textContent = "";
-        wordMeaningBox.textContent = data[0].meanings[0].definitions[0].definition;
+// Display word definition in div
+	dataDisplayArea.textContent = "";
+        dataDisplayArea.textContent = data[0].meanings[0].definitions[0].definition;
         
     })
     
+}
+
+// Function to fetch news article from Google news API
+function getWordInContext(){
+		if (searchString == false) {
+		return
+	} else {
+		
+	newsQueryURL = newsApiUrl + "q=" + searchString + key;
+
+// Request news data
+	fetch(newsQueryURL)
+	.then(function (response) {
+		return response.json();
+	}).then(function (data) {
+
+// Loop through data 
+		for (var i = 0; i < data.articles.length; i++){
+			var newsDescription = data.articles[i].description;
+			
+// If news description contain the searchString
+		if (newsDescription.indexOf(searchString) > -1) {
+						
+// Display news description in div				
+		dataDisplayArea.textContent = "";
+		dataDisplayArea.textContent = data.articles[i].description
+			}
+		}
+  
+    })
+	}
 }
