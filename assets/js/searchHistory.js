@@ -13,3 +13,13 @@ for (let j = 0; j < localStorage.length; j++) {
   savedSearchItem.textContent += " : " + localStorage.getItem(definitionKey);
   searchHistory.appendChild(savedSearchItem);
 }
+
+// Listen for click event on clear button
+// Clear saved searches from list
+// Clear localstorage
+clearBtn.addEventListener("click", function () {
+    localStorage.clear();
+    if (searchHistory.childElementCount > 0) {
+        searchHistory.textContent = "";
+    }
+});
