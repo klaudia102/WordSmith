@@ -18,24 +18,24 @@ body {
   border-radius: 12px;
 }
 
-#contextButton {
+#context-button {
   background: white;
   border: 0.5px solid #2b3035;
   color: #2b3035;
   border: 1px solid #ddd;
 }
-#searchButton {
+#search-button {
   background: white;
   border: 0.5px solid #2b3035;
   color: #2b3035;
   border: 1px solid #ddd;
 }
 
-#contextButton:hover {
+#context-button:hover {
   background-color: #c8d9eb;
 }
 
-#searchButton:hover {
+#search-button:hover {
   background-color: #c8d9eb;
 }
 
