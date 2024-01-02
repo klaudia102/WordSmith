@@ -52,6 +52,25 @@
       </div>
     </nav>
     <!-- Navigation bar ends -->
+    <!-- Modal -->
+    <div class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Save</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Save your search</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Hero section/jumbotron -->
     <div class="jumbotron jumbotron-fluid pt-4">
@@ -83,7 +102,7 @@
             <button
               class="btn btn-light mb-2 px-3 shadow-sm"
               type="button"
-              id="searchButton"
+              id="search-button"
             >
               Search for your word
             </button>
@@ -102,8 +121,8 @@
     <!-- Result from Search Input -->
     <div class="container-fluid">
       <div
-        class="textArea container-fluid d-flex justify-content-center py-4"
-        id="textArea"
+        class="display-area container-fluid d-flex justify-content-center py-4"
+        id="display-area"
       >
         Lorem ipsum dolor sit amet. Ut iure laudantium qui optio consequatur ea
         porro quos et suscipit voluptate eum itaque suscipit id sapiente saepe
