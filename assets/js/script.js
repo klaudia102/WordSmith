@@ -33,6 +33,12 @@ var synonymsQueryURL;
 //Search string
 var searchString = "";
 
+// Character sets to validate searchString
+// Special characters
+var regSpec = /[!@#$%^&*()\-+={}[\]:;"'<>,.?\/|\\]/;
+// Numeric characters
+var regNum = /\d/;
+
 // Function to fetch data from dictionary API
 function getDefinition() {
 	
