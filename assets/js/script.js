@@ -1,57 +1,37 @@
 // Get references to elements
-var input = document.querySelector("#word-input");
-var displayArea = document.querySelector("#display-area");
-var modalBox = document.querySelector("#modal-box");
-var modalTitle = document.querySelector(".modal-title");
-var modalText = document.querySelector("#modal-body-text");
-var closeBtn = document.querySelector("#close-btn");
-var searchBtn = document.querySelector("#search-btn");
+var input = document.querySelector('#word-input');
+var displayArea = document.querySelector('#display-area');
+var modalBox = document.querySelector('#modal-box');
+var modalTitle = document.querySelector('.modal-title');
+var modalText = document.querySelector('#modal-body-text');
+var closeBtn = document.querySelector('#close-btn');
+var searchBtn = document.querySelector('#search-btn');
 
 // Listen for click event on search button
-searchBtn.addEventListener("click", getDefinition);
+searchBtn.addEventListener('click', getDefinition);
 
-<<<<<<< HEAD
-// Function to fetch data
-function getDefinition() {
-  // Get user input
-  var word = input.value;
-  // Remove whitespace from input string
-  word.trim();
-  var queryURL = 'https://api.dictionaryapi.dev/api/v2/entries/en/' + word;
-
-  fetch(queryURL)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      // Display word definition in div
-      //   wordMeaningBox.textContent = '';
-      wordMeaningBox.textContent =
-        data[0].meanings[0].definitions[0].definition;
-    });
-=======
 // Listen for input event on input
-input.addEventListener("input", function () {
-  displayArea.textContent = " ";
+input.addEventListener('input', function () {
+  displayArea.textContent = ' ';
 });
 
 // Listen for click events on close (X) icon
-closeBtn.addEventListener("click", hideModal);
+closeBtn.addEventListener('click', hideModal);
 
 // API URLs
-var dictionaryApiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+var dictionaryApiUrl = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
 
-var datamuseApiUrl = "https://api.datamuse.com/words?rel_syn=";
+var datamuseApiUrl = 'https://api.datamuse.com/words?rel_syn=';
 
 // Search count limit
-var resultLimit = "&max=5";
+var resultLimit = '&max=5';
 
 // Query Urls
 var wordQueryURL;
 var synonymsQueryURL;
 
 //Search string
-var searchString = "";
+var searchString = '';
 
 // Character sets to validate searchString
 // Special characters
@@ -69,19 +49,19 @@ function getDefinition(event) {
   searchString = searchString.toLowerCase();
 
   // Variables for data
-  var wordData = "";
+  var wordData = '';
   var synArr = [];
   var synNons = [];
 
   // If searchstring is empty
-  if (searchString == "") {
-    modalTitle.textContent = "";
-    modalText.textContent = "Search area cannot be empty. Please enter a word.";
+  if (searchString == '') {
+    modalTitle.textContent = '';
+    modalText.textContent = 'Search area cannot be empty. Please enter a word.';
     showModal();
     // If search string contains content other than letters
   } else if (regSpec.test(searchString) || regNum.test(searchString)) {
-    modalTitle.textContent = "";
-    modalText.textContent = "Please enter a word using only letters";
+    modalTitle.textContent = '';
+    modalText.textContent = 'Please enter a word using only letters';
     showModal();
   } else if (
     // If search string already exists in localstorage
@@ -92,7 +72,6 @@ function getDefinition(event) {
     return;
     // If search string does not exist in localstorage
   } else if (localStorage.getItem(searchString) === null) {
-
     // Build word query URL
     wordQueryURL = dictionaryApiUrl + searchString;
 
@@ -102,7 +81,7 @@ function getDefinition(event) {
         return response.json();
       })
       .then(function (data) {
-        // Variable to save returned data 
+        // Variable to save returned data
         wordData = data;
 
         // If word definition exists
@@ -119,7 +98,6 @@ function getDefinition(event) {
         }
         // if no word definition exists
         else if (wordData.title) {
-
           // Build synonyms query url
           synonymsQueryURL = datamuseApiUrl + searchString + resultLimit;
 
@@ -129,11 +107,10 @@ function getDefinition(event) {
               return response.json();
             })
             .then(function (data) {
-            // Store returned array of synonyms
+              // Store returned array of synonyms
               synArr = data;
-              // If no synonyms returned 
+              // If no synonyms returned
               if (synArr.length == 0) {
-
                 // Display not found message
                 modalTitle.textContent = wordData.title;
                 modalText.textContent = wordData.resolution;
@@ -146,13 +123,13 @@ function getDefinition(event) {
                 for (var i = 0; i < synArr.length; i++) {
                   synNons.push(synArr[i].word);
                 }
-                // Display not found message 
+                // Display not found message
                 modalTitle.textContent =
                   "Sorry, we couldn't find the word you were looking for.";
                 // Suggest words from synonyms
                 modalText.textContent =
-                  " You could try the following words with similar meaning:\n" +
-                  synNons.join(" ,");
+                  ' You could try the following words with similar meaning:\n' +
+                  synNons.join(' ,');
                 showModal();
               }
             })
@@ -165,10 +142,9 @@ function getDefinition(event) {
 
 // Function to show modal
 function showModal() {
-  modalBox.classList.add("show");
+  modalBox.classList.add('show');
 }
 // Function  to hide modal
 function hideModal() {
-  modalBox.classList.remove("show");
->>>>>>> 4ebb9302a56e0d2dea06f053bc63f0c8730ab736
+  modalBox.classList.remove('show');
 }
