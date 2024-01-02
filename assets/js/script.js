@@ -19,18 +19,18 @@ input.addEventListener("input", function () {
 closeBtn.addEventListener("click", hideModal);
 
 // API URLs
-var dictionaryApiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/"
+var dictionaryApiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
-var newsApiUrl = "https://gnews.io/api/v4/search?";
-// API key for news Api
-var key = "&country=us&max=10&token=d06b56befd778f95afde57c26ebc9890";
+var datamuseApiUrl = "https://api.datamuse.com/words?rel_syn=";
+
+// Search count limit
+var resultLimit = "&max=5";
 
 // Query Urls
 var wordQueryURL;
-var newsQueryURL;
+var synonymsQueryURL;
 
 //Search string
-
 var searchString = "";
 
 // Function to fetch data from dictionary API
