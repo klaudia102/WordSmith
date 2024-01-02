@@ -47,3 +47,7 @@ body {
   background-color: white;
   padding-bottom: 600px;
 }
+
+.show {
+  display: block;
+}
