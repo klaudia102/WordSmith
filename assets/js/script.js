@@ -142,3 +142,12 @@ function getDefinition(event) {
       });
   }
 }
+
+// Function to show modal
+function showModal() {
+  modalBox.classList.add("show");
+}
+// Function  to hide modal
+function hideModal() {
+  modalBox.classList.remove("show");
+}
