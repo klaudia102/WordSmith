@@ -1,8 +1,11 @@
 // Get references to elements
-var input = document.querySelector('#word-input');
-var dataDisplayArea = document.querySelector('#textArea');
-var searchBtn = document.querySelector('#searchButton');
-var contextBtn = document.querySelector('#contextButton');
+var input = document.querySelector("#word-input");
+var displayArea = document.querySelector("#display-area");
+var modalBox = document.querySelector("#modal-box");
+var modalTitle = document.querySelector(".modal-title");
+var modalText = document.querySelector("#modal-body-text");
+var closeBtn = document.querySelector("#close-btn");
+var searchBtn = document.querySelector("#search-btn");
 
 // Listen for click events on searchBtn
 // Make API call to Free Dictionary API when searchBtn is clicked
