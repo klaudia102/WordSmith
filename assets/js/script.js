@@ -40,57 +40,105 @@ var regSpec = /[!@#$%^&*()\-+={}[\]:;"'<>,.?\/|\\]/;
 var regNum = /\d/;
 
 // Function to fetch data from dictionary API
-function getDefinition() {
-	
-// Get user input
-searchString = input.value;
-	
-// Remove whitespace from search string
-searchString.trim();
-	
-wordQueryURL = dictionaryApiUrl + searchString;
-	
-// Request dictionary data
-fetch(wordQueryURL)
-	.then(function (response) {
-	return response.json();
-	}).then(function (data) { 
-    		
-// Display word definition in div
-	dataDisplayArea.textContent = "";
-        dataDisplayArea.textContent = data[0].meanings[0].definitions[0].definition;
-        
-    })
-    
-}
+function getDefinition(event) {
+  event.preventDefault();
+  // Get user input
+  searchString = input.value;
 
-// Function to fetch news article from Google news API
-function getWordInContext(){
-		if (searchString == false) {
-		return
-	} else {
-		
-	newsQueryURL = newsApiUrl + "q=" + searchString + key;
+  // Change user input to lower case
+  searchString = searchString.toLowerCase();
 
-// Request news data
-	fetch(newsQueryURL)
-	.then(function (response) {
-		return response.json();
-	}).then(function (data) {
+  // Variables for data
+  var wordData = "";
+  var synArr = [];
+  var synNons = [];
 
-// Loop through data 
-		for (var i = 0; i < data.articles.length; i++){
-			var newsDescription = data.articles[i].description;
-			
-// If news description contain the searchString
-		if (newsDescription.indexOf(searchString) > -1) {
-						
-// Display news description in div				
-		dataDisplayArea.textContent = "";
-		dataDisplayArea.textContent = data.articles[i].description
-			}
-		}
-  
-    })
-	}
+  // If searchstring is empty
+  if (searchString == "") {
+    modalTitle.textContent = "";
+    modalText.textContent = "Search area cannot be empty. Please enter a word.";
+    showModal();
+    // If search string contains content other than letters
+  } else if (regSpec.test(searchString) || regNum.test(searchString)) {
+    modalTitle.textContent = "";
+    modalText.textContent = "Please enter a word using only letters";
+    showModal();
+  } else if (
+    // If search string already exists in localstorage
+    localStorage.getItem(searchString) !== null
+  ) {
+    // Retrieve from storage and display
+    displayArea.textContent = localStorage.getItem(searchString);
+    return;
+    // If search string does not exist in localstorage
+  } else if (localStorage.getItem(searchString) === null) {
+
+    // Build word query URL
+    wordQueryURL = dictionaryApiUrl + searchString;
+
+    // Send a request to Free Dictionary API
+    fetch(wordQueryURL)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        // Variable to save returned data 
+        wordData = data;
+
+        // If word definition exists
+        if (!wordData.title) {
+          // Variable to store word definition
+          var wordDefinition =
+            wordData[0].meanings[0].definitions[0].definition;
+
+          // Display word definition in display area
+          displayArea.textContent = wordDefinition;
+
+          // Save word and definition to localstorage
+          localStorage.setItem(searchString.toLowerCase(), wordDefinition);
+        }
+        // if no word definition exists
+        else if (wordData.title) {
+
+          // Build synonyms query url
+          synonymsQueryURL = datamuseApiUrl + searchString + resultLimit;
+
+          // Call Datamuse API
+          fetch(synonymsQueryURL)
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (data) {
+            // Store returned array of synonyms
+              synArr = data;
+              // If no synonyms returned 
+              if (synArr.length == 0) {
+
+                // Display not found message
+                modalTitle.textContent = wordData.title;
+                modalText.textContent = wordData.resolution;
+                showModal();
+
+                // Check for word
+                // If word not in dictionary but in synonyms
+              } else if (synArr.length > 0) {
+                // Store synonyms in array
+                for (var i = 0; i < synArr.length; i++) {
+                  synNons.push(synArr[i].word);
+                }
+                // Display not found message 
+                modalTitle.textContent =
+                  "Sorry, we couldn't find the word you were looking for.";
+                // Suggest words from synonyms
+                modalText.textContent =
+                  " You could try the following words with similar meaning:\n" +
+                  synNons.join(" ,");
+                showModal();
+              }
+            })
+            // Handle any errors that occurred during the fetch
+            .catch(console.error);
+        }
+      });
+  }
 }
