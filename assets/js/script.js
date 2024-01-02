@@ -7,13 +7,16 @@ var modalText = document.querySelector("#modal-body-text");
 var closeBtn = document.querySelector("#close-btn");
 var searchBtn = document.querySelector("#search-btn");
 
-// Listen for click events on searchBtn
-// Make API call to Free Dictionary API when searchBtn is clicked
-searchBtn.addEventListener('click', getDefinition);
+// Listen for click event on search button
+searchBtn.addEventListener("click", getDefinition);
 
-// Listen for click events on contextBtn
-// Make API call to Google News API when contextBtn is clicked
-contextBtn.addEventListener('click',getWordInContext);
+// Listen for input event on input
+input.addEventListener("input", function () {
+  displayArea.textContent = " ";
+});
+
+// Listen for click events on close (X) icon
+closeBtn.addEventListener("click", hideModal);
 
 // API URLs
 var dictionaryApiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/"
