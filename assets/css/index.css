@@ -24,7 +24,7 @@ body {
   color: #2b3035;
   border: 1px solid #ddd;
 }
-#searchButton {
+#search-button {
   background: white;
   border: 0.5px solid #2b3035;
   color: #2b3035;
@@ -35,7 +35,7 @@ body {
   background-color: #c8d9eb;
 }
 
-#searchButton:hover {
+#search-button:hover {
   background-color: #c8d9eb;
 }
 
@@ -43,7 +43,11 @@ body {
   max-width: 100%;
 }
 
-.textArea {
+.display-area {
   background-color: white;
   padding-bottom: 600px;
+}
+
+.show {
+  display: block;
 }
