@@ -15,11 +15,12 @@ for (let j = 0; j < localStorage.length; j++) {
 }
 
 // Listen for click event on clear button
-// Clear saved searches from list
-// Clear localstorage
 clearBtn.addEventListener("click", function () {
- 
+  
+// Clear saved searches from list
     if (searchHistory.childElementCount > 0) {
         searchHistory.textContent = "";
     }
+  // Clear localstorage
+   localStorage.clear();
 });
