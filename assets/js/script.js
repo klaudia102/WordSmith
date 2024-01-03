@@ -5,6 +5,7 @@ var modalBox = document.querySelector('#modal-box');
 var modalTitle = document.querySelector('.modal-title');
 var modalText = document.querySelector('#modal-body-text');
 var closeBtn = document.querySelector('#close-btn');
+var closeIcon = document.querySelector(".close");
 var searchBtn = document.querySelector('#search-btn');
 
 // Listen for click event on search button
@@ -17,6 +18,9 @@ input.addEventListener('input', function () {
 
 // Listen for click events on close (X) icon
 closeBtn.addEventListener('click', hideModal);
+
+// Listen for click event on close (X) icon
+closeIcon.addEventListener("click", hideModal);
 
 // API URLs
 var dictionaryApiUrl = 'https://api.dictionaryapi.dev/api/v2/entries/en/';

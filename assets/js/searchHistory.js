@@ -18,7 +18,7 @@ for (let j = 0; j < localStorage.length; j++) {
 // Clear saved searches from list
 // Clear localstorage
 clearBtn.addEventListener("click", function () {
-    localStorage.clear();
+ 
     if (searchHistory.childElementCount > 0) {
         searchHistory.textContent = "";
     }
