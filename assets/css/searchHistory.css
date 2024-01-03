@@ -10,3 +10,8 @@ ul {
   font-size: 20px;
   list-style-type: decimal-leading-zero;
 }
+
+#search-history-btns {
+  display: flex;
+  align-items: center;
+}
