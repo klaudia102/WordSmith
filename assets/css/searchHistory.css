@@ -8,7 +8,8 @@ h1 {
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 15px;
-  border: solid 3px;
+  background-color: white;
+  border-radius: 5px;
 }
 
 ul {
@@ -16,6 +17,9 @@ ul {
   flex-direction: column;
   justify-content: center;
   list-style-type: decimal-leading-zero;
+  background-color: white;
+  border-radius: 5px;
+  padding: 50px;
 }
 
 #search-history-btns {
