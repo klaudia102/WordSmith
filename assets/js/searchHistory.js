@@ -2,8 +2,6 @@
 var searchHistory = document.querySelector("#search-history");
 var clearBtn = document.querySelector("#clear");
 
-// Variable to store saved searches
-var savedSearches = "";
 
 // Get saved searches from localstorage and add to list
 for (let j = 0; j < localStorage.length; j++) {
