@@ -1,5 +1,14 @@
+:root {
+  --background-colour: #f5ebeb;
+  --buttons-colour: white;
+  --font-colour: #2b3035;
+  --border-colour: #ddd;
+  --content-background: white;
+  --button-hover: #c8d9eb;
+}
+
 body {
-  background-color: #f5ebeb;
+  background-color: var(--background-colour);
 }
 
 .inputBox {
@@ -20,13 +29,13 @@ body {
 
 #search-button {
   background: white;
-  border: 0.5px solid #2b3035;
-  color: #2b3035;
-  border: 1px solid #ddd;
+
+  color: var(--font-colour);
+  border: 1px solid var(--border-colour);
 }
 
 #search-button:hover {
-  background-color: #c8d9eb !important;
+  background-color: var(--button-hover);
 }
 
 .navbar {
@@ -35,7 +44,7 @@ body {
 
 .display-area {
   font-size: 25px;
-  background-color: white;
+  background-color: var(--content-background);
   padding-bottom: 600px;
   border-radius: 12px;
   text-align: center;
