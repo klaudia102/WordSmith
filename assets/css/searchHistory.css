@@ -1,3 +1,12 @@
+:root {
+  --background-colour: #f5ebeb;
+  --buttons-colour: white;
+  --font-colour: #2b3035;
+  --border-colour: #ddd;
+  --content-background: white;
+  --button-hover: #c8d9eb;
+}
+
 body {
   background-color: #f5ebeb;
 }
@@ -8,9 +17,9 @@ h1 {
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 15px;
-  background-color: white;
+  background-color: var(--content-background);
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-colour);
 }
 
 ul {
@@ -18,7 +27,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   list-style-type: decimal-leading-zero;
-  background-color: white;
+  background-color: var(--content-background);
   border-radius: 5px;
   padding: 50px;
   margin: 40px;
@@ -34,16 +43,16 @@ ul {
 #clear {
   font-size: 20px;
   padding: 10px;
-  background: white;
-  color: #2b3035;
-  border: 1px solid #ddd;
+  background: var(--buttons-colour);
+  color: var(--font-colour);
+  border: 1px solid var(--border-colour);
   border-radius: 5px;
   margin-bottom: 40px;
 }
 
 #homeButton:hover,
 #clear:hover {
-  background-color: #c8d9eb;
+  background-color: var(--button-hover);
 }
 
 .wrapper {
