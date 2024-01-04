@@ -10,6 +10,7 @@ h1 {
   padding: 15px;
   background-color: white;
   border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
 ul {
@@ -25,6 +26,21 @@ ul {
 #search-history-btns {
   display: flex;
   align-items: center;
+}
+
+#homeButton,
+#clear {
+  font-size: 20px;
+  padding: 10px;
+  background: white;
+  color: #2b3035;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#homeButton:hover,
+#clear:hover {
+  background-color: #c8d9eb;
 }
 
 .wrapper {
