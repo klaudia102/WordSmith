@@ -11,7 +11,7 @@ N/A
 ## Usage
 
 After filling in the "search input" field and clicking the "Search for your word button," the application will provide the definition for the word.
-![alt text](assets/images/screenshot.png)
+![WordSmith App](assets/images/screenshot-of-wordsmith-app.PNG)
 
 ## Credits
 
