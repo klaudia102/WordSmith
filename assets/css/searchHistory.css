@@ -38,6 +38,7 @@ ul {
   color: #2b3035;
   border: 1px solid #ddd;
   border-radius: 5px;
+  margin-bottom: 40px;
 }
 
 #homeButton:hover,
