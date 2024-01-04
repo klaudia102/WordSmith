@@ -18,12 +18,6 @@ body {
   border-radius: 12px;
 }
 
-#contextButton {
-  background: white;
-  border: 0.5px solid #2b3035;
-  color: #2b3035;
-  border: 1px solid #ddd;
-}
 #search-button {
   background: white;
   border: 0.5px solid #2b3035;
