@@ -2,7 +2,7 @@
 
 ## Description
 
-We built 'Wordsmith'  to help everyone who struggles with understanding the meaning of words or phrases. Connected to comprehensive dictionaries, it provides the precise meaning of any searched expression and shows how to use it effectively in a sentence.
+We built 'Wordsmith'  to help everyone who struggles with understanding the meaning of words. Connected to comprehensive dictionaries, it provides the precise meaning of any searched word.
 
 ## Installation
 
@@ -10,8 +10,7 @@ N/A
 
 ## Usage
 
-After filling in the "search input" field and clicking the "search button," the application will describe the searched expression. If the user wishes to see the expression used in context, they should click the "Find word in Context" button. A modal will then appear, displaying sentences containing the searched expression.
-
+After filling in the "search input" field and clicking the "Search for your word button," the application will provide the definition for the word.
 ![alt text](assets/images/screenshot.png)
 
 ## Credits
@@ -19,7 +18,7 @@ After filling in the "search input" field and clicking the "search button," the 
 Robyn Windsor https://github.com/RobynWindsor
 Obioma Ikekeonwu https://github.com/obeeyoma
 Klaudia Kierepka https://github.com/klaudia102
-List your collaborators, if any, with links to their GitHub profiles.
+
 
 ## License
 
