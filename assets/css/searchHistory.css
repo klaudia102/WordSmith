@@ -21,11 +21,13 @@ ul {
   background-color: white;
   border-radius: 5px;
   padding: 50px;
+  margin: 40px;
 }
 
 #search-history-btns {
   display: flex;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 #homeButton,
